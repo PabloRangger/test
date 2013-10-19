@@ -42,23 +42,25 @@ public class MainActivity extends Activity {
 //	}
 	
 	public void submitclick(View view){
-//		
+		
 //		EditText pw = new EditText(getBaseContext());
 //		pw.setText("asdf");
 //		EditText un = new EditText(getBaseContext());
 //		un.setText("admin");
-//		
-//		EditText upw = (EditText)findViewById(R.id.Password);
-//		EditText uun = (EditText)findViewById(R.id.Username);
-//		
-//		
-//		
-//		if( upw.getText() == pw.getText() && uun.getText() == un.getText()){
-//			
+		
+		EditText etupw = (EditText) findViewById(R.id.Password);
+		EditText etuun = (EditText) findViewById(R.id.Username);
+		
+		String upw = etupw.getText().toString();
+		String uun = etuun.getText().toString();
+		
+		String un = "admin";
+		String pw = "pw";
+		
+		if(pw.equals(upw) && un.equals(uun)){
 			Intent intent = new Intent(this, Testaferlogin.class);
 			startActivity(intent);
-			
-	//	}
+		}
 	
 		
 	}

@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 public class Testaferlogin extends FragmentActivity {
 
+	private final int totalpages = 3;
+	
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
 	 * fragments for each of the sections. We use a
@@ -28,12 +30,11 @@ public class Testaferlogin extends FragmentActivity {
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
-
 	/**
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,7 +48,7 @@ public class Testaferlogin extends FragmentActivity {
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
-
+		mViewPager.setCurrentItem(1);
 	}
 
 	@Override
@@ -74,7 +75,16 @@ public class Testaferlogin extends FragmentActivity {
 			// below) with the page number as its lone argument.
 			Fragment fragment = new DummySectionFragment();
 			Bundle args = new Bundle();
-			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+//			args.putInt(DummySectionFragment.ARG_SECTION_TEXT, position +1);
+			if(position+1 == 1){
+				args.putString(DummySectionFragment.ARG_SECTION_TEXT, "Hi");
+			}
+			else if (position+1 == 2){
+				args.putString(DummySectionFragment.ARG_SECTION_TEXT, "Fagensis");
+			}
+			else if (position+1 == 3){
+				args.putString(DummySectionFragment.ARG_SECTION_TEXT, "Lol");
+			}
 			fragment.setArguments(args);
 			return fragment;
 		}
@@ -82,7 +92,7 @@ public class Testaferlogin extends FragmentActivity {
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 3;
+			return totalpages;
 		}
 
 		@Override
@@ -109,7 +119,7 @@ public class Testaferlogin extends FragmentActivity {
 		 * The fragment argument representing the section number for this
 		 * fragment.
 		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
+		public static final String ARG_SECTION_TEXT = "section_text";
 
 		public DummySectionFragment() {
 		}
@@ -121,8 +131,8 @@ public class Testaferlogin extends FragmentActivity {
 					R.layout.fragment_testaferlogin_dummy, container, false);
 			TextView dummyTextView = (TextView) rootView
 					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+			dummyTextView.setText(getArguments().getString(
+					ARG_SECTION_TEXT));
 			return rootView;
 		}
 	}

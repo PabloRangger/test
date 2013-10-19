@@ -36,15 +36,6 @@
         android:layout_alignParentRight="true"
         android:src="@drawable/ic_launcher" />
 
-    <EditText
-        android:id="@+id/Username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/Password"
-        android:layout_below="@+id/textView2"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -72,10 +63,9 @@
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="textPassword" >
+        android:inputType="textPassword" />
 
-        <requestFocus />
-    </EditText>
+        
 
     <Button
         android:id="@+id/submit"
@@ -86,5 +76,17 @@
         android:layout_marginTop="20dp"
         android:onClick="submitclick"
         android:text="Submit" />
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Password"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:inputType="textPersonName">
+    
+    <requestFocus />
+    </EditText>
 
 </RelativeLayout>
