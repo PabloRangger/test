@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".Testaferlogin" >
 
+    <!-- Paulteil -->
+    
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    
+    <!-- !Paulteil -->
+    
     <!--
     This title strip will display the currently visible page title, as well as the page
     titles for adjacent pages.
